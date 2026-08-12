@@ -1,0 +1,16 @@
+{
+  "id": "aashrithsumukh-ui/schizophrenia-classifer",
+  "title": "Schizophrenia Classifier - ResNet18 2D CNN",
+  "code_file": "schizophrenia_classifier.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "aashrithsumukh-ui/schizophrenia-mri-npy"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

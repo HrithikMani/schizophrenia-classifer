@@ -1,5 +1,17 @@
-*.npy 
-*.pth 
-*.png 
-harmonized_labels.csv 
-gradcam_outputs/ 
+*.npy
+*.pth
+*.png
+harmonized_labels.csv
+gradcam_outputs/
+
+# Python env and cache
+venv/
+__pycache__/
+*.pyc
+
+# PyTorch / Matplotlib cache
+torch_cache/
+
+# VS Code
+.vscode/
+

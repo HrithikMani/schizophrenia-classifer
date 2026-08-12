@@ -35,6 +35,9 @@ class Config:
     # you launch Python from. Both the CSV and the saved checkpoint land next
     # to the script file.
     _here          = os.path.dirname(os.path.abspath(__file__))
+    # On Kaggle the dataset lands at /kaggle/input/<dataset-slug>/
+    _kaggle_data   = "/kaggle/input/schizophrenia-mri-npy"
+    _data_dir      = _kaggle_data if os.path.isdir(_kaggle_data) else _here
     csv_path       = os.path.join(_here, "harmonized_labels.csv")
     checkpoint     = os.path.join(_here, "best_model.pth")
 
@@ -52,7 +55,9 @@ class Config:
     max_epochs     = 100
     patience       = 10                         # early-stopping patience
     seed           = 42
-    device         = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device         = (torch.device("cuda") if torch.cuda.is_available()
+                      else torch.device("mps") if torch.backends.mps.is_available()
+                      else torch.device("cpu"))
 
 cfg = Config()
 torch.manual_seed(cfg.seed)
